@@ -1,0 +1,13 @@
+apply plugin: 'groovy'
+apply plugin: 'application'
+apply plugin: 'project-report'
+
+description = 'RSS aggregator'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile 'org.codehaus.groovy:groovy-all:2.0.4'
+}
