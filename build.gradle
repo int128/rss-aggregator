@@ -20,3 +20,24 @@ dependencies {
   compile 'ch.qos.logback:logback-classic:1.0.7'
   compile 'org.slf4j:jcl-over-slf4j:1.6.6'
 }
+
+mainClassName = 'org.hidetake.rss.aggregator.Main'
+
+run {
+  systemProperties(
+    'file.encoding': 'UTF-8',
+    outputXmlPath: "${buildDir}/rss.xml",
+    outputXmlTitle: 'Aggregated RSS',
+    outputXmlLink: 'http://www.example.com/',
+    //ntlmUser: 'user',
+    //ntlmPassword: 'password',
+    //ntlmWorkstation: 'domain',
+    //ntlmDomain: 'domain',
+    )
+  args(
+    )
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '1.3'
+}
